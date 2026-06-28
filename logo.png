@@ -1,0 +1,110 @@
+import streamlit as st
+
+st.image("logo.png", width=200)
+
+# Page Settings
+st.set_page_config(
+    page_title="Sri Sankara Vision Care",
+    page_icon="👁️",
+    layout="wide"
+)
+
+# Header
+st.title("👁️ Sri Sankara Vision Care")
+st.subheader("Complete Eye Care Solutions")
+
+# About Clinic
+st.header("About Us")
+
+st.write("""
+Sri Sankara Vision Care provides comprehensive eye care services
+with modern diagnostic facilities and personalized treatment.
+
+Our mission is to protect and improve your vision through
+quality eye care and patient-centered services.
+""")
+
+# Doctor Details
+st.header("👨‍⚕️ Doctor Information")
+
+st.write("""
+**Dr. Y. Veera**
+
+**Specialization:** Ophthalmologist
+
+Experienced in diagnosis and treatment of various eye diseases,
+vision correction, cataract management, and routine eye examinations.
+""")
+
+# Services
+st.header("🩺 Our Services")
+
+col1, col2 = st.columns(2)
+
+with col1:
+    st.markdown("""
+    - Eye Checkup
+    - Vision Testing
+    - Cataract Screening
+    - Eye Infection Treatment
+    """)
+
+with col2:
+    st.markdown("""
+    - Spectacle Consultation
+    - Glaucoma Screening
+    - Diabetic Eye Checkup
+    - General Eye Care
+    """)
+
+# Working Hours
+st.header("🕒 Working Hours")
+
+st.info("""
+Monday to Saturday
+
+9:00 AM to 11:30 PM
+""")
+
+# Appointment Booking
+st.header("📅 Book Appointment")
+
+name = st.text_input("Patient Name")
+
+phone = st.text_input("Phone Number")
+
+age = st.number_input(
+    "Age",
+    min_value=1,
+    max_value=120,
+    step=1
+)
+
+appointment_date = st.date_input("Appointment Date")
+
+problem = st.text_area("Describe Your Eye Problem")
+
+if st.button("Book Appointment"):
+    st.success("Appointment Booked Successfully!")
+
+    st.write("### Appointment Details")
+    st.write("Name:", name)
+    st.write("Phone:", phone)
+    st.write("Age:", age)
+    st.write("Date:", appointment_date)
+    st.write("Problem:", problem)
+
+# Contact Information
+st.header("📞 Contact Us")
+
+st.write("""
+📍 Sri Surya Complex, Shabul Bazar, Bandar Road, Challapalli
+
+📞 7793927222
+
+✉️ srisankaravisioncare@gmail.com
+""")
+
+# Footer
+st.markdown("---")
+st.write("© 2026 Sri Sankara Vision Care. All Rights Reserved.")
