@@ -2,13 +2,7 @@ import streamlit as st
 import mysql.connector
 
 # MySQL Connection
-def get_connection():
-    return mysql.connector.connect(
-        host="your-cloud-host",
-        user="root",
-        password="l@vanya123",
-        database="clinic_db"
-    )
+   
 def get_connection():
     return mysql.connector.connect(
         host=st.secrets["DB_HOST"],
